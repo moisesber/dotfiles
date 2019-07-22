@@ -1,3 +1,5 @@
+alias config='/usr/bin/git --git-dir=$HOME/workspace/dotfiles/ --work-tree=$HOME'
+
 source ~/.git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
