@@ -4,13 +4,9 @@ disco_venv() {
 
 alias disco=disco_venv
 
+# dotfiles in git configs
+# setup was based on https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-#if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-#  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-#  GIT_PROMPT_ONLY_IN_REPO=1
-#  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-#fi
 
 source ~/.git-prompt.sh
 
@@ -18,8 +14,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=verbose # or auto to omit counts
+
+# Source https://gist.github.com/justintv/168835
 export PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@\[\033[0;36m\]\h:\w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
-#export PS1='\h:\w$(__git_ps1 " (%s)")\$ '
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
