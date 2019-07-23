@@ -1,4 +1,10 @@
-alias config='/usr/bin/git --git-dir=$HOME/workspace/dotfiles/ --work-tree=$HOME'
+disco_venv() {
+        pyenv activate disco  && disco $@ && pyenv deactivate disco
+}
+
+alias disco=disco_venv
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 source ~/.git-prompt.sh
 
@@ -6,7 +12,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=verbose # or auto to omit counts
-export PS1='\h:\w$(__git_ps1 " (%s)")\$ '
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
@@ -41,7 +46,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
-alias config='/usr/bin/git --git-dir=/Users/moisesr/.dotfileconfig/ --work-tree=/Users/moisesr'
 
 #Added because pipenv breaks in macos https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python
 export LC_ALL=en_US.UTF-8
