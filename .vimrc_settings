@@ -3,7 +3,7 @@ syntax on
 filetype indent on                                    " activates indenting for files
 set backspace=2                                       " backspace in insert mode works like normal editor
 set autoindent                                        
-set nonumber                                          " no line numbers
+set number                                            " show line numbers
 set ruler                                             " show current line and column
 set nobackup                                          " get rid of anoying ~file
 set noswapfile                                        " no swap files
@@ -73,3 +73,7 @@ command! ZoomToggle call s:ZoomToggle()
 """ OPTIMISATIONS 
 " Python based plugins might slow startup, this should fix it
 " To profile startup: https://github.com/bchretien/vim-profiler
+"
+
+" carzy stuff testing
+set termguicolors

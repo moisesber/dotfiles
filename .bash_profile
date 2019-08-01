@@ -9,6 +9,7 @@ alias disco=disco_venv
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 source ~/.git-prompt.sh
+source ~/.git-completion.bash
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
@@ -36,15 +37,11 @@ HISTSIZE=
 HISTFILESIZE=
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/moisesr/google-cloud-sdk/path.bash.inc' ]; then source '/Users/moisesr/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/moisesr/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/moisesr/google-cloud-sdk/completion.bash.inc'; fi
-
 alias dss='ldapsearch -H ldaps://ds-tierone-gew1.spotify.net/ -b dc=spotify,dc=net -D uid=moisesr,ou=people,ou=spotify,dc=spotify,dc=net -W'
 DS_DEV_CREDS=$(cat /Users/moisesr/keepass/.ds-dev-moisesr-creds)
 alias dssdev="ldapsearch -H ldaps://ds-dev.spotify.net -b dc=spotify,dc=net -D uid=moisesr,ou=people,ou=spotify,dc=spotify,dc=net -w $DS_DEV_CREDS"
+alias anonymau5-read="ldapvi -h ldaps://ds-write-gew1.spotify.net/  -D uid=moisesr,ou=people,ou=spotify,dc=spotify,dc=net -b cn=read,ou=anonymau5,ou=spotify,dc=spotify,dc=net "
+alias vim="nvim" 
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -61,3 +58,9 @@ eval "$(pyenv virtualenv-init -)"
 
 #set python path to gcloud command
 export CLOUDSDK_PYTHON=/usr/local/bin/python
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/moisesr/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/moisesr/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/moisesr/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/moisesr/Downloads/google-cloud-sdk/completion.bash.inc'; fi

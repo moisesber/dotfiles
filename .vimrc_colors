@@ -1,5 +1,5 @@
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
+"  let base16colorspace=256 " this seems to not work anymore in the new setup
   source ~/.vimrc_background
 endif
 
