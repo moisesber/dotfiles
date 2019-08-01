@@ -4,12 +4,21 @@
 
 [core]
   autocrlf = input
+	editor = nvim
 [push]
   default = current
 [pull]
   default = current
 [rebase]
   autosquash = true
+
+[diff]
+  tool = nvim-diff
+[merge]
+  tool = nvim-diff
+  conflictstyle = diff3
+[mergetool "nvim-diff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [alias]
   a = add
