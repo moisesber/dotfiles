@@ -31,7 +31,7 @@ docker_env
 
 export PATH=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/bin/:$GOPATH/bin:$GOROOT/bin:$PATH
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home
 
 HISTSIZE=
 HISTFILESIZE=
